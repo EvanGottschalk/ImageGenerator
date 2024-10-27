@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/imagegenerator/static/css/main.d0c7654f.css",
+    "main.js": "/imagegenerator/static/js/main.1b514ee5.js",
+    "static/media/services-image.png": "/imagegenerator/static/media/services-image.f2e4102f1d3e261c8f78.png",
+    "static/media/banner-home.png": "/imagegenerator/static/media/banner-home.e27acdc76b2ce168a32f.png",
+    "static/media/about-image.png": "/imagegenerator/static/media/about-image.b8f87165f0e8017e7b59.png",
+    "static/media/logo.png": "/imagegenerator/static/media/logo.17b471f961deae0d4b74.png",
+    "static/media/instagram.png": "/imagegenerator/static/media/instagram.f69e037ed84fbec1c52e.png",
+    "static/media/linkedin.png": "/imagegenerator/static/media/linkedin.6e79785a668caf84602e.png",
+    "static/media/Sequel100Black-65.ttf": "/imagegenerator/static/media/Sequel100Black-65.e4003b0d2f58a56e1166.ttf",
+    "static/media/Sequel100Black-45.ttf": "/imagegenerator/static/media/Sequel100Black-45.02ab319b0eed5c5c6406.ttf",
+    "static/media/twitter.png": "/imagegenerator/static/media/twitter.8f9db4396662eea4f779.png",
+    "index.html": "/imagegenerator/index.html",
+    "main.d0c7654f.css.map": "/imagegenerator/static/css/main.d0c7654f.css.map",
+    "main.1b514ee5.js.map": "/imagegenerator/static/js/main.1b514ee5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0c7654f.css",
+    "static/js/main.1b514ee5.js"
+  ]
+}
