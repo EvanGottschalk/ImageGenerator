@@ -76,6 +76,14 @@
   margin: 0px 6px 0px 0px;
 }
 
+
+.imageGeneratorGUI_submitButton {
+  width: 10%;
+  margin-top: 2%;
+}
+
+
+
 .imageGeneratorGUILink:hover {
   -webkit-transform: scale(1.10);
   -moz-transform: scale(1.10);

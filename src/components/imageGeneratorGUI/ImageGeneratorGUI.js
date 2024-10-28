@@ -33,6 +33,11 @@ const ImageGeneratorGUI = () => {
     console.log("Selected Model:", model);
   }
 
+  function handleGenerateClick(event) {
+    let model = event.target.value;
+    console.log("Generate Click:", model);
+  }
+
   return (
     <div className='imageGeneratorGUI'>
       <div className='imageGeneratorGUILeftContainer'>
@@ -52,11 +57,13 @@ const ImageGeneratorGUI = () => {
             textDecoration: 'none',
             color: '#bbbbbb'}}>Select Model:
           </div>
-          <select className='imageGeneratorGUI_selectList' id='selectModel' onChange={handleModelChange}>
+          <select className='imageGeneratorGUI_selectList' id='selectModel' onChange={handleModelChange} data-aos="fade-right" data-aos-delay="300" style={{
+            textDecoration: 'none'}}>
             <option value="black-forest-labs/FLUX.1-dev">black-forest-labs/FLUX.1-dev</option>
             <option value="black-forest-labs/FLUX.1-dev0">black-forest-labs/FLUX.1-dev</option>
             <option value="black-forest-labs/FLUX.1-dev">black-forest-labs/FLUX.1-dev</option>
           </select>
+          <input value="Generate" className="imageGeneratorGUI_submitButton" id="generateButton" type="submit" style={{fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>
           {/* <a data-aos="flip-down" data-aos-delay="0" href='https://evanon.earth/nofunlabs' target="_blank" 
           className='imageGeneratorGUIText imageGeneratorGUILink' id='nofunlabsLink' onMouseOver={mouseOver} onMouseLeave={mouseLeave} style={{
             textDecoration: 'none',
