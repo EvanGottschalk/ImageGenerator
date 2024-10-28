@@ -137,8 +137,8 @@ a:active { text-decoration: none; }
 
   .navbarLogoImage {
     width: 100%;
-    padding: 0% 0% 0% 15%;
-    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 10% 10%;
   }
 
   .twitterIcon {

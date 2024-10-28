@@ -59,7 +59,7 @@
   width: 45%;
 }
 
-.imageGeneratorGUIEntry {
+.imageGeneratorGUI_promptEntry {
   padding: 3px 3px 3px 3px;
   width: 60%;
   height: 144px;
@@ -99,7 +99,7 @@
   color: #000000;
   font-family: 'Arial';
   width: 57%;
-  padding: 10px 2.5% 20px 12px;
+  padding: 10px 2.5% 10px 12px;
   margin: 0px 0px 0px 0px;
 }
 
@@ -110,7 +110,7 @@
   color: #0008ff;
   font-family: 'Arial';
   width: 57%;
-  padding: 10px 2.5% 20px 12px;
+  padding: 20px 2.5% 20px 12px;
   margin: 0px 0px 0px 0px;
 }
 
@@ -140,8 +140,9 @@
     flex-direction: column;
     max-width: 100vw;
     margin: 0% 0% 0% 0%;
-    padding: 15% 0% 20% 0%;
+    padding: 0% 0% 0% 0%;
   }
+  
 
   .imageGeneratorGUIRight {
     align-items: center;
@@ -150,8 +151,10 @@
 
 
   .imageGeneratorGUILeftContainer {
-    padding: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
     margin: 0% 0% 0% 0%;
+    width: 100%;
+    justify-content: center;
   }
 
   .imageGeneratorGUITextContainer {
@@ -160,6 +163,7 @@
   }
 
   .imageGeneratorGUITitle {
+    padding-top: 3%;
     font-size: 20.5px;
   }
 
@@ -167,14 +171,29 @@
     font-size: 14px;
   }
 
-  .imageGeneratorGUIImage {
-    width: 90%;
-    padding: 0% 0% 0% 5%;
-    margin: 10% 0% 0% 0%;
+  .imageGeneratorGUI_promptEntry {
+    width: 97.5%;
   }
 
   .imageGeneratorGUILink {
     width: 100%;
+  }
+
+  .imageGeneratorGUI_modelDescription {
+    width: 93%;
+  }
+
+  .imageGeneratorGUI_modelLink {
+    width: 93%;
+  }
+
+  .imageGeneratorGUI_selectList {
+    width: 99%;
+  }
+
+  .imageGeneratorGUI_submitButton {
+    width: 40%;
+    margin-top: 20px;
   }
 
 }

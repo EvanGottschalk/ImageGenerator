@@ -137,7 +137,7 @@ const ImageGeneratorGUI = () => {
             textDecoration: 'none',
             color: '#bbbbbb'}}>Enter Prompt:
           </div>
-            <textarea id='imageGeneratorGUI_promptEntry' className='imageGeneratorGUIEntry' data-aos="fade-right" data-aos-delay="300" style={{
+            <textarea id='imageGeneratorGUI_promptEntry' className='imageGeneratorGUI_promptEntry' data-aos="fade-right" data-aos-delay="300" style={{
               textDecoration: 'none',
               color: '#000000'}} placeholder="Your prompt here..." onChange={handlePromptChange} required/>
           <div className='imageGeneratorGUITitle' data-aos="fade-right" data-aos-delay="300" style={{
