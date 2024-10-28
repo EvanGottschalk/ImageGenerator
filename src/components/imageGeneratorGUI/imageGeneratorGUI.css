@@ -82,6 +82,16 @@
   margin-top: 2%;
 }
 
+.imageGeneratorGUI_generatedImage {
+  width: 60%;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
 
 
 .imageGeneratorGUILink:hover {

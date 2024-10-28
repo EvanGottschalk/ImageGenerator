@@ -3,6 +3,7 @@
   "homepage": "https://evangottschalk.github.io/ImageGenerator/",
   "version": "4.20.69",
   "dependencies": {
+    "@livepeer/ai": "^0.4.1",
     "aos": "^2.3.4",
     "circular-natal-horoscope-js": "^1.1.0",
     "ethers": "^5.7.2",
@@ -12,7 +13,8 @@
     "react-redux": "^8.0.5",
     "react-scripts": "4.0.3",
     "redux": "^4.2.1",
-    "redux-saga": "^1.2.3"
+    "redux-saga": "^1.2.3",
+    "zod": "^3.23.8"
   },
   "scripts": {
     "start": "react-scripts start",
