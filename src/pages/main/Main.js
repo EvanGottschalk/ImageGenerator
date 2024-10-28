@@ -2,7 +2,6 @@ import React from 'react'
 import About from '../../components/about/About'
 import Services from '../../components/services/Services'
 import Animation from '../../components/animation/Animation'
-import ImageGeneratorGUI from '../../components/imageGeneratorGUI/ImageGeneratorGUI'
 //import Roadmap from '../../components/roadmap/Roadmap'
 //import Team from '../../components/team/Team'
 //import FAQ from '../../components/faq/FAQ'
@@ -19,10 +18,9 @@ const Main = () => {
   return (
     <div className='main'>
       <Banner />
-      {/* <About />
+      <About />
       <Services />
-      <Animation /> */}
-      <ImageGeneratorGUI />
+      <Animation />
     </div>
   )
 }

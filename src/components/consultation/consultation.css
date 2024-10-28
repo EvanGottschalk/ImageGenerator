@@ -1,0 +1,97 @@
+.consultation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 0% 0% 0% 0%;
+  margin: 0% 0% 0% 0%;
+}
+
+.consultationLeftContainer {
+  flex: 50%;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  float: right;
+  padding: 0% 0% 0% 0%;
+}
+
+.consultationRightContainer {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.consultationImage {
+  width: 75%;
+  align-items: right;
+  justify-content: right;
+  float: right;
+}
+
+
+.consultationTextContainer {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.consultationText {
+  text-align: left;
+  color: black;
+}
+
+.consultationLink:hover {
+  -webkit-transform: scale(1.10);
+  -moz-transform: scale(1.10);
+  -o-transform: scale(1.10);
+  transform: scale(1.10);
+}
+
+.consultationLink:active {
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+@media only screen and (max-width: 1400px) {
+  .consultationBoxIMG {
+    width: 100%;
+  }
+  .consultation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+  }
+  .consultationBox {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 630px;
+  }
+  .consultationRight {
+    align-items: center;
+    justify-content: center;
+  }
+  .consultationRightBottom {
+    max-width: 630px;
+    height: fit-content;
+  }
+  .consultationTextContainer {
+    padding: 0% 5% 0% 5%;
+    margin: 0% 0% 0% 0%;
+  }
+
+  .paypalContainer {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 0% 0% 25%;
+  }
+
+}
