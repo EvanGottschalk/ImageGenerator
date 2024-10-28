@@ -1,22 +1,31 @@
 {
   "files": {
-    "main.css": "/imagegenerator/static/css/main.d0c7654f.css",
-    "main.js": "/imagegenerator/static/js/main.1b514ee5.js",
-    "static/media/services-image.png": "/imagegenerator/static/media/services-image.f2e4102f1d3e261c8f78.png",
-    "static/media/banner-home.png": "/imagegenerator/static/media/banner-home.e27acdc76b2ce168a32f.png",
-    "static/media/about-image.png": "/imagegenerator/static/media/about-image.b8f87165f0e8017e7b59.png",
-    "static/media/logo.png": "/imagegenerator/static/media/logo.17b471f961deae0d4b74.png",
-    "static/media/instagram.png": "/imagegenerator/static/media/instagram.f69e037ed84fbec1c52e.png",
-    "static/media/linkedin.png": "/imagegenerator/static/media/linkedin.6e79785a668caf84602e.png",
-    "static/media/Sequel100Black-65.ttf": "/imagegenerator/static/media/Sequel100Black-65.e4003b0d2f58a56e1166.ttf",
-    "static/media/Sequel100Black-45.ttf": "/imagegenerator/static/media/Sequel100Black-45.02ab319b0eed5c5c6406.ttf",
-    "static/media/twitter.png": "/imagegenerator/static/media/twitter.8f9db4396662eea4f779.png",
-    "index.html": "/imagegenerator/index.html",
-    "main.d0c7654f.css.map": "/imagegenerator/static/css/main.d0c7654f.css.map",
-    "main.1b514ee5.js.map": "/imagegenerator/static/js/main.1b514ee5.js.map"
+    "main.css": "/static/css/main.56f5cfe7.chunk.css",
+    "main.js": "/static/js/main.cd34c49e.chunk.js",
+    "main.js.map": "/static/js/main.cd34c49e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.40e17e66.js",
+    "runtime-main.js.map": "/static/js/runtime-main.40e17e66.js.map",
+    "static/css/2.7fc9bc2b.chunk.css": "/static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.2f9750bf.chunk.js": "/static/js/2.2f9750bf.chunk.js",
+    "static/js/2.2f9750bf.chunk.js.map": "/static/js/2.2f9750bf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7fc9bc2b.chunk.css.map": "/static/css/2.7fc9bc2b.chunk.css.map",
+    "static/css/main.56f5cfe7.chunk.css.map": "/static/css/main.56f5cfe7.chunk.css.map",
+    "static/js/2.2f9750bf.chunk.js.LICENSE.txt": "/static/js/2.2f9750bf.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Sequel100Black-65.e4003b0d.ttf",
+    "static/media/about-image.b8f87165.png": "/static/media/about-image.b8f87165.png",
+    "static/media/banner-home.5a03ad74.png": "/static/media/banner-home.5a03ad74.png",
+    "static/media/instagram.f69e037e.png": "/static/media/instagram.f69e037e.png",
+    "static/media/linkedin.6e79785a.png": "/static/media/linkedin.6e79785a.png",
+    "static/media/logo.17b471f9.png": "/static/media/logo.17b471f9.png",
+    "static/media/services-image.f2e4102f.png": "/static/media/services-image.f2e4102f.png",
+    "static/media/twitter.27f520ea.png": "/static/media/twitter.27f520ea.png"
   },
   "entrypoints": [
-    "static/css/main.d0c7654f.css",
-    "static/js/main.1b514ee5.js"
+    "static/js/runtime-main.40e17e66.js",
+    "static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.2f9750bf.chunk.js",
+    "static/css/main.56f5cfe7.chunk.css",
+    "static/js/main.cd34c49e.chunk.js"
   ]
 }
