@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: black;
-  padding: 2% 0% 10% 0%;
+  padding: 0% 0% 10% 0%;
   margin: 0% 0% 0% 0%;
   overflow: hidden;
 }
@@ -49,8 +49,10 @@
 }
 
 .imageGeneratorGUITitle {
-  font-size: 23px;
-  text-decoration: underline;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  margin-top: 1%;
 }
 
 .imageGeneratorGUILink {
@@ -65,6 +67,13 @@
   text-align: left;
   color: rgb(0, 0, 0);
   font-size: 16px;
+}
+
+.imageGeneratorGUI_selectList {
+  padding: 0px 0px 1px 0px;
+  width: 40%;
+  font-size: 16px;
+  margin: 0px 6px 0px 0px;
 }
 
 .imageGeneratorGUILink:hover {
