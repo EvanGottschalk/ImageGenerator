@@ -5,6 +5,25 @@ import './imageGeneratorGUI.css'
 
 let image_URL; // make a default image
 
+const model_dict = {"black-forest-labs/FLUX.1-dev": {"description": "FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 [pro] and [dev] surpass popular  models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 [schnell] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) .  Our models are specifically finetuned to preserve the entire output diversity from pretraining.",
+                                                     "link": "https://blackforestlabs.ai/announcing-black-forest-labs/"},
+                    "SG161222/Realistic_Vision_V6.0_B1_noVAE": {"description":  "Latest (experimental) release of the Realistic Vision model specialized in creating photorealistic portraits.",
+                                                     "link": "https://huggingface.co/SG161222/Realistic_Vision_V6.0_B1_noVAE"},
+                    "stabilityai/stable-diffusion-xl-base-1.0": {"description": "A base model for stable diffusion by Stability AI.",
+                                                     "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"},
+                    "runwayml/stable-diffusion-v1-5": {"description": "A stable diffusion model by Runway ML.",
+                                                     "link": "https://huggingface.co/runwayml/stable-diffusion-v1-5"},
+                    "prompthero/openjourney-v4": {"description": "A model by Prompthero for open-ended journey generation.",
+                                                     "link": "https://huggingface.co/prompthero/openjourney-v4"},
+                    "ByteDance/SDXL-Lightning": {"description": "A lightning-fast diffusion model by ByteDance.",
+                                                     "link": "https://huggingface.co/ByteDance/SDXL-Lightning"},
+                    "SG161222/RealVisXL_V4.0": {"description": "A diffusion model that excels in generating high-quality, photorealistic images.",
+                                                     "link": "https://huggingface.co/SG161222/RealVisXL_V4.0"},
+                    "SG161222/RealVisXL_V4.0_Lightning": {"description": "A streamlined version of RealVisXL_V4.0, designed for faster inference while still aiming for photorealism.",
+                                                     "link": "https://huggingface.co/SG161222/RealVisXL_V4.0_Lightning"},
+                    "DALL-E": {"description": "[COMING SOON] Text-to-image generation powered by OpenAI and ChatGPT.",
+                                                     "link": "https://openai.com/index/dall-e-3/"}}
+
 const ImageGeneratorGUI = () => {
 
   // const prompt_entry_field = document.querySelector('.imageGeneratorGUIEntry');
@@ -36,6 +55,10 @@ const ImageGeneratorGUI = () => {
   function handleModelChange(event) {
     let model = event.target.value;
     console.log("Selected Model:", model);
+    console.log("document.getElementById('modelDescription').innerHTML", document.getElementById('modelDescription').innerHTML);
+    console.log("document.getElementById(event.target.alt)", document.getElementById(event.target.alt));
+    document.getElementById('modelDescription').innerHTML = model_dict[model]['description'];
+    document.getElementById('modelLink').href = model_dict[model]['link'];
   }
 
   async function handleGenerateClick(event) {
@@ -124,10 +147,23 @@ const ImageGeneratorGUI = () => {
           <select className='imageGeneratorGUI_selectList' id='selectModel' onChange={handleModelChange} data-aos="fade-right" data-aos-delay="300" style={{
             textDecoration: 'none'}}>
             <option value="black-forest-labs/FLUX.1-dev">black-forest-labs/FLUX.1-dev</option>
-            <option value="black-forest-labs/FLUX.1-dev">black-forest-labs/FLUX.1-dev</option>
-            <option value="black-forest-labs/FLUX.1-dev">black-forest-labs/FLUX.1-dev</option>
+            <option value="SG161222/Realistic_Vision_V6.0_B1_noVAE">SG161222/Realistic_Vision_V6.0_B1_noVAE</option>
+            <option value="stabilityai/stable-diffusion-xl-base-1.0">stabilityai/stable-diffusion-xl-base-1.0</option>
+            <option value="runwayml/stable-diffusion-v1-5">runwayml/stable-diffusion-v1-5</option>
+            <option value="prompthero/openjourney-v4">prompthero/openjourney-v4</option>
+            <option value="ByteDance/SDXL-Lightning">ByteDance/SDXL-Lightning</option>
+            <option value="SG161222/RealVisXL_V4.0">SG161222/RealVisXL_V4.0</option>
+            <option value="SG161222/RealVisXL_V4.0_Lightning">SG161222/RealVisXL_V4.0_Lightning</option>
+            <option value="DALL-E">DALL-E (coming soon)</option>
           </select>
-          <input value="Generate" className="imageGeneratorGUI_submitButton" id="generateButton" type="submit" style={{fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>
+          <div className='imageGeneratorGUITitle' data-aos="fade-right" data-aos-delay="300" style={{
+            textDecoration: 'none',
+            color: '#bbbbbb'}}>Model Description:
+          </div>
+          <div className='imageGeneratorGUI_modelDescription' id='modelDescription' data-aos="fade-right" data-aos-delay="300">FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 [pro] and [dev] surpass popular  models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 [schnell] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) .  Our models are specifically finetuned to preserve the entire output diversity from pretraining.</div>
+          <a href="https://blackforestlabs.ai/announcing-black-forest-labs/" target='_blank' className='imageGeneratorGUI_modelLink' id='modelLink' data-aos="fade-right" data-aos-delay="300"><u>Learn More -></u></a>
+          <input value="Generate" className="imageGeneratorGUI_submitButton" id="generateButton" type="submit" data-aos="fade-right" data-aos-delay="300" style={{
+            fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>
           <div id='imageURL'className='imageGeneratorGUITitle' data-aos="fade-right" data-aos-delay="300" style={{
             textDecoration: 'none',
             color: '#bbbbbb'}}>Image URL: </div>

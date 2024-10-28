@@ -93,6 +93,27 @@
 }
 
 
+.imageGeneratorGUI_modelDescription {
+  background-color: #ffffff;
+  font-size: 15px;
+  color: #000000;
+  font-family: 'Arial';
+  width: 57%;
+  padding: 10px 2.5% 20px 12px;
+  margin: 0px 0px 0px 0px;
+}
+
+.imageGeneratorGUI_modelLink {
+  background-color: #ffffff;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #0008ff;
+  font-family: 'Arial';
+  width: 57%;
+  padding: 10px 2.5% 20px 12px;
+  margin: 0px 0px 0px 0px;
+}
+
 
 .imageGeneratorGUILink:hover {
   -webkit-transform: scale(1.10);
