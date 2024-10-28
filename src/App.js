@@ -3,7 +3,7 @@ import Navbar from './components/navbar/Navbar';
 import Main from './pages/main/Main';
 import Footer from './components/footer/Footer';
 //import Consultation from './pages/consultation/Consultation'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 //import FloaterPage from './pages/floater/FloaterPage';
 
@@ -22,15 +22,16 @@ const App = () => {
                                                   user_token_ID, setTokenID_Context,
                                                   user_metadata, setMetadata_Context,
                                                   user_avatar_URI, setAvatarURI_Context }}>
-               <BrowserRouter>
+               {/* <BrowserRouter> */}
                     <Navbar />
                     {/*/<Background />*/}
-                    <Routes>
+                    <Main />
+                    {/* <Routes>
                          <Route exact path="/" element={<Main />} />
-                         {/*<Route exact path="/consultation" element={<Consultation />} />*/}
-                    </Routes>
+                         <Route exact path="/consultation" element={<Consultation />} />
+                    </Routes> */}
                     <Footer />
-               </BrowserRouter>
+               {/* </BrowserRouter> */}
           </SmartContractContext.Provider>
      )
 }
