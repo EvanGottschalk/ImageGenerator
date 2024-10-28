@@ -1,6 +1,6 @@
 {
-  "name": "evanonearth",
-  "homepage": "https://evanonearth.xyz",
+  "name": "imagegenerator",
+  "homepage": "https://evangottschalk.github.io/ImageGenerator/",
   "version": "4.20.69",
   "dependencies": {
     "@chakra-ui/react": "^2.6.1",

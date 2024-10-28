@@ -78,13 +78,13 @@ const Services = () => {
         <div className='servicesFooter'>
           <div className='servicesFooterIconContainer'>
             <div className='servicesFooterSocialsContainer'>
-              <a href='https://twitter.com/EvanOnEarth_eth' target="_blank">
+              <a href='https://twitter.com/imagegenerator_eth' target="_blank">
                 <img data-aos="fade-right" src={twitter_icon} id='servicesTwitterIcon' onMouseOver={mouseover} onMouseLeave={mouseleave} className='servicesFooterIcon twitterServicesFooterIcon'/>
               </a>
               <a href='https://www.linkedin.com/in/evan-gottschalk/' target="_blank">
                 <img data-aos="fade-up" src={linkedin_icon} id='servicesLinkedinIcon' onMouseOver={mouseover} onMouseLeave={mouseleave} className='servicesFooterIcon linkedinServicesFooterIcon'/>
               </a>
-              <a href='https://www.instagram.com/evanonearth_eth/' target="_blank">
+              <a href='https://www.instagram.com/imagegenerator_eth/' target="_blank">
                 <img data-aos="fade-left" src={instagram_icon} id='servicesInstagramIcon' onMouseOver={mouseover} onMouseLeave={mouseleave} className='servicesFooterIcon instagramServicesFooterIcon'/>
               </a>
             </div>
