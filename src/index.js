@@ -5,7 +5,7 @@ import App from './App'
 
 
 require('dotenv').config();
-// console.log("API Key in index.js:", process.env.REACT_APP_OPENAI_API_KEY);
+console.log("API Key in index.js:", process.env.REACT_APP_OPENAI_API_KEY);
 
 ReactDOM.render(
      <React.StrictMode>
