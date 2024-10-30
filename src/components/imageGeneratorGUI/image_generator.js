@@ -3,6 +3,10 @@
 
 import { Livepeer } from "@livepeer/ai";
 
+// console.log("API Key in image_generator.js:", process.env.REACT_APP_OPENAI_API_KEY);
+
+
+
 export default { generateImage }
 
 
@@ -36,7 +40,7 @@ export async function generateImage(prompt, width, height, model, provider="Live
   let image_URL;
   if (provider === "Livepeer") {
     image_URL = generateImage_Livepeer(prompt, width, height, model);
-  } else if (provider === "DALL-E" || provider === "DALLE") {
+  } else if (provider === "OpenAI") {
     image_URL = generateImage_DALLE(prompt, width, height, model);
   }
 
@@ -52,9 +56,10 @@ async function generateImage_Livepeer(prompt, width=1024, height=1024, model="bl
     height: height
   });
   
-  console.log(result.imageResponse.images);
+  console.log("Livepeer result.imageResponse.images", result.imageResponse.images);
+  console.log("Livepeer Image URL:", result.imageResponse.images[0]['url']);
 
-  return(result.imageResponse.images);
+  return(result.imageResponse.images[0]['url']);
 }
 
 async function generateImage_DALLE(prompt, width=1024, height=1024, model="black-forest-labs/FLUX.1-dev") {
@@ -63,8 +68,7 @@ async function generateImage_DALLE(prompt, width=1024, height=1024, model="black
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-          // ${process.env.OPENAI_API_KEY}
+          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`
         },
       body: JSON.stringify({
           model: "dall-e-3",
@@ -75,11 +79,13 @@ async function generateImage_DALLE(prompt, width=1024, height=1024, model="black
     })
 
     const data = await response.json()
-    console.log(data);
-    //setImage(data.data[0].url)
+    console.log("DALL-E Response `data`", data);
+    console.log("DALL-E Image URL:", data.data[0].url);
+    return(data.data[0].url);
   } catch (error) {
       console.error('Error generating image:', error)
   } finally {
       console.log("Done generating image!")
   }
+
 }

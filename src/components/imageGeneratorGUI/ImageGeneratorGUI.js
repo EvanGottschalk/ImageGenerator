@@ -4,6 +4,7 @@ import image_generator from "./image_generator";
 import './imageGeneratorGUI.css'
 
 let image_URL; // make a default image
+let provider = "Livepeer";
 
 const model_dict = {"black-forest-labs/FLUX.1-dev": {"description": "FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 [pro] and [dev] surpass popular  models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 [schnell] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) .  Our models are specifically finetuned to preserve the entire output diversity from pretraining.",
                                                      "link": "https://blackforestlabs.ai/announcing-black-forest-labs/"},
@@ -54,6 +55,12 @@ const ImageGeneratorGUI = () => {
 
   function handleModelChange(event) {
     let model = event.target.value;
+
+    if (model === "DALL-E") {
+      provider = "OpenAI";
+    } else {
+      provider = "Livepeer";
+    };
     console.log("Selected Model:", model);
     console.log("document.getElementById('modelDescription').innerHTML", document.getElementById('modelDescription').innerHTML);
     console.log("document.getElementById(event.target.alt)", document.getElementById(event.target.alt));
@@ -83,7 +90,7 @@ const ImageGeneratorGUI = () => {
     image_element.src = '';
   
     let image_generator_response, image_generator_promise, image_generator_result, x;
-    image_generator_response = image_generator.generateImage(prompt, 512, 512, model, "Livepeer");
+    image_generator_response = image_generator.generateImage(prompt, 512, 512, model, provider);
     
   
     var loop_count = 1;
@@ -106,7 +113,11 @@ const ImageGeneratorGUI = () => {
       console.log(image_generator_response);
       image_generator_promise = image_generator_response.then((result) => {
         console.log(result);
-        if (Array.isArray(result)) {
+        // if (Array.isArray(result)) {
+        //   loop = false;
+        //   image_generator_result = result;
+        // };
+        if (typeof result === 'string') {
           loop = false;
           image_generator_result = result;
         };
@@ -115,7 +126,8 @@ const ImageGeneratorGUI = () => {
     };
   
     console.log('image_generator_response', image_generator_response);
-    const image_URL = image_generator_result[0]['url'];
+    // const image_URL = image_generator_result[0]['url'];
+    image_URL = image_generator_result;
     image_URL_element.innerHTML = "Image URL: " + image_URL;
     image_title_element.innerHTML = "Image: ";
     image_element.src = image_URL;
