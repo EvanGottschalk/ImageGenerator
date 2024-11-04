@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ImageGenerator/static/css/main.ffb83bf8.chunk.css",
-    "main.js": "/ImageGenerator/static/js/main.cc94720c.chunk.js",
-    "main.js.map": "/ImageGenerator/static/js/main.cc94720c.chunk.js.map",
-    "runtime-main.js": "/ImageGenerator/static/js/runtime-main.be8ee2cf.js",
-    "runtime-main.js.map": "/ImageGenerator/static/js/runtime-main.be8ee2cf.js.map",
-    "static/css/2.7fc9bc2b.chunk.css": "/ImageGenerator/static/css/2.7fc9bc2b.chunk.css",
-    "static/js/2.bb67adf1.chunk.js": "/ImageGenerator/static/js/2.bb67adf1.chunk.js",
-    "static/js/2.bb67adf1.chunk.js.map": "/ImageGenerator/static/js/2.bb67adf1.chunk.js.map",
+    "main.css": "/ImageGenerator/static/css/main.68e3538c.chunk.css",
+    "main.js": "/ImageGenerator/static/js/main.05f0a5c2.chunk.js",
+    "main.js.map": "/ImageGenerator/static/js/main.05f0a5c2.chunk.js.map",
+    "runtime-main.js": "/ImageGenerator/static/js/runtime-main.8ec3f375.js",
+    "runtime-main.js.map": "/ImageGenerator/static/js/runtime-main.8ec3f375.js.map",
+    "static/css/2.87648d60.chunk.css": "/ImageGenerator/static/css/2.87648d60.chunk.css",
+    "static/js/2.28e48cdc.chunk.js": "/ImageGenerator/static/js/2.28e48cdc.chunk.js",
+    "static/js/2.28e48cdc.chunk.js.map": "/ImageGenerator/static/js/2.28e48cdc.chunk.js.map",
     "index.html": "/ImageGenerator/index.html",
-    "static/css/2.7fc9bc2b.chunk.css.map": "/ImageGenerator/static/css/2.7fc9bc2b.chunk.css.map",
-    "static/css/main.ffb83bf8.chunk.css.map": "/ImageGenerator/static/css/main.ffb83bf8.chunk.css.map",
-    "static/js/2.bb67adf1.chunk.js.LICENSE.txt": "/ImageGenerator/static/js/2.bb67adf1.chunk.js.LICENSE.txt",
+    "static/css/2.87648d60.chunk.css.map": "/ImageGenerator/static/css/2.87648d60.chunk.css.map",
+    "static/css/main.68e3538c.chunk.css.map": "/ImageGenerator/static/css/main.68e3538c.chunk.css.map",
+    "static/js/2.28e48cdc.chunk.js.LICENSE.txt": "/ImageGenerator/static/js/2.28e48cdc.chunk.js.LICENSE.txt",
     "static/media/index.css": "/ImageGenerator/static/media/Sequel100Black-65.e4003b0d.ttf",
     "static/media/about-image.b8f87165.png": "/ImageGenerator/static/media/about-image.b8f87165.png",
     "static/media/banner-home.e27acdc7.png": "/ImageGenerator/static/media/banner-home.e27acdc7.png",
@@ -22,10 +22,10 @@
     "static/media/twitter.8f9db439.png": "/ImageGenerator/static/media/twitter.8f9db439.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.be8ee2cf.js",
-    "static/css/2.7fc9bc2b.chunk.css",
-    "static/js/2.bb67adf1.chunk.js",
-    "static/css/main.ffb83bf8.chunk.css",
-    "static/js/main.cc94720c.chunk.js"
+    "static/js/runtime-main.8ec3f375.js",
+    "static/css/2.87648d60.chunk.css",
+    "static/js/2.28e48cdc.chunk.js",
+    "static/css/main.68e3538c.chunk.css",
+    "static/js/main.05f0a5c2.chunk.js"
   ]
 }
