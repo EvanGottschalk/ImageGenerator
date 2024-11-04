@@ -21,7 +21,7 @@ const Footer = () => {
     <div className='footer'>
       <div className='creatorAttributionContainer'>
         <div className='creatorAttributionTextContainer footerTextContainer'>
-          <div className='creatorAttributionText'>Site created by </div><a id='creatorAttributionLink' className='creatorAttributionLink' href="https://twitter.com/evanonearth_eth" onMouseOver={mouseOver} onMouseLeave={mouseLeave}>@EvanOnEarth_eth</a>
+          <div className='creatorAttributionText'>Site created by </div><a id='creatorAttributionLink' className='creatorAttributionLink' href="https://twitter.com/evanonearth_eth" target="_blank" onMouseOver={mouseOver} onMouseLeave={mouseLeave}>@EvanOnEarth_eth</a>
         </div>
       </div>
       <div className='footerContainer'>
