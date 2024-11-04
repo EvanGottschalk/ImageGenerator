@@ -64,24 +64,28 @@ async function generateImage_Livepeer(prompt, width=1024, height=1024, model="bl
 
 async function generateImage_DALLE(prompt, width=1024, height=1024, model="black-forest-labs/FLUX.1-dev") {
   try {
-    const response = await fetch('https://api.openai.com/v1/images/generations', {
+    const response = await fetch('https://alchm-backend.onrender.com/generate-image', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`
         },
-      body: JSON.stringify({
-          model: "dall-e-3",
-          prompt: prompt,
-          n: 1,
-          size: "1024x1024"
-      })
+      body: JSON.stringify({ prompt })
     })
 
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
+
     const data = await response.json()
+
+
+
+
     console.log("DALL-E Response `data`", data);
-    console.log("DALL-E Image URL:", data.data[0].url);
-    return(data.data[0].url);
+    console.log("DALL-E Response `data.imageUrl`", data.imageUrl);
+    // console.log("DALL-E Response `data.data.imageUrl`", data.data.imageUrl);
+    // console.log("DALL-E Response `data.data[0].imageUrl`", data.data[0].imageUrl);
+    return(data.imageUrl);
   } catch (error) {
       console.error('Error generating image:', error)
   } finally {
