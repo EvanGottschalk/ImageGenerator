@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ImageGenerator/static/css/main.68e3538c.chunk.css",
-    "main.js": "/ImageGenerator/static/js/main.25caad6d.chunk.js",
-    "main.js.map": "/ImageGenerator/static/js/main.25caad6d.chunk.js.map",
+    "main.css": "/ImageGenerator/static/css/main.2404aa27.chunk.css",
+    "main.js": "/ImageGenerator/static/js/main.49ed7b42.chunk.js",
+    "main.js.map": "/ImageGenerator/static/js/main.49ed7b42.chunk.js.map",
     "runtime-main.js": "/ImageGenerator/static/js/runtime-main.d4696458.js",
     "runtime-main.js.map": "/ImageGenerator/static/js/runtime-main.d4696458.js.map",
     "static/css/2.87648d60.chunk.css": "/ImageGenerator/static/css/2.87648d60.chunk.css",
@@ -132,7 +132,7 @@
     "static/js/63.1f160f17.chunk.js.map": "/ImageGenerator/static/js/63.1f160f17.chunk.js.map",
     "index.html": "/ImageGenerator/index.html",
     "static/css/2.87648d60.chunk.css.map": "/ImageGenerator/static/css/2.87648d60.chunk.css.map",
-    "static/css/main.68e3538c.chunk.css.map": "/ImageGenerator/static/css/main.68e3538c.chunk.css.map",
+    "static/css/main.2404aa27.chunk.css.map": "/ImageGenerator/static/css/main.2404aa27.chunk.css.map",
     "static/js/2.5325935c.chunk.js.LICENSE.txt": "/ImageGenerator/static/js/2.5325935c.chunk.js.LICENSE.txt",
     "static/media/1.png": "/ImageGenerator/static/media/1.aff2b3f6.png",
     "static/media/10.png": "/ImageGenerator/static/media/10.0bff3392.png",
@@ -207,7 +207,7 @@
     "static/js/runtime-main.d4696458.js",
     "static/css/2.87648d60.chunk.css",
     "static/js/2.5325935c.chunk.js",
-    "static/css/main.68e3538c.chunk.css",
-    "static/js/main.25caad6d.chunk.js"
+    "static/css/main.2404aa27.chunk.css",
+    "static/js/main.49ed7b42.chunk.js"
   ]
 }
