@@ -4,6 +4,7 @@ import image_generator from "./image_generator";
 import './imageGeneratorGUI.css'
 
 let image_URL; // make a default image
+let generated_text = '...';
 let provider = "Livepeer";
 
 const model_dict = {"black-forest-labs/FLUX.1-dev": {"description": "FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 [pro] and [dev] surpass popular  models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 [schnell] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) .  Our models are specifically finetuned to preserve the entire output diversity from pretraining.",
@@ -73,10 +74,88 @@ const ImageGeneratorGUI = () => {
     var prompt = document.getElementById('imageGeneratorGUI_promptEntry').value;
     var model = document.getElementById('selectModel').value;
     
-    image_URL = await handleImageGeneration(prompt, model);
-
-    console.log("image_URL:", image_URL);
+    if (event.target.id === 'generateImageButton') {
+      image_URL = await handleImageGeneration(prompt, model);
+      console.log("image_URL:", image_URL);
+    } else if (event.target.id === 'generateTextButton') {
+      // let image_generator_response, image_generator_promise, image_generator_result, x;
+      generated_text = await handleTextGeneration(prompt, model);
+      console.log("generated_text", generated_text);
+      
+    }
   }
+
+  
+  async function handleTextGeneration(prompt, model) {
+    console.log('\nImageGeneratorGUI >>> RUNNING handleTextGeneration()');
+    let text_output_element = document.getElementById('textOutput');
+    try {
+      const response = await fetch('https://alchm-backend.onrender.com/generate-text', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: JSON.stringify({ prompt })
+      })
+  
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+  
+      const data = await response.json()
+  
+  
+      console.log("DALL-E Response `data`", data);
+      // console.log("DALL-E Response `data.imageUrl`", data.imageUrl);
+      // console.log("DALL-E Response `data.data.imageUrl`", data.data.imageUrl);
+      // console.log("DALL-E Response `data.data[0].imageUrl`", data.data[0].imageUrl);
+      generated_text = data;
+      text_output_element.innerHTML = generated_text;
+
+      return(data);
+      
+    } catch (error) {
+        console.error('Error generating text:', error)
+    } finally {
+        console.log("Done generating text!")
+    }
+
+    
+  };
+
+
+
+  // async function generateImage_DALLE(prompt, width=1024, height=1024, model="black-forest-labs/FLUX.1-dev") {
+  //   try {
+  //     const response = await fetch('https://alchm-backend.onrender.com/generate-image', {
+  //       method: 'POST',
+  //       headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       body: JSON.stringify({ prompt })
+  //     })
+  
+  //     if (!response.ok) {
+  //       throw new Error(`Server error: ${response.status}`);
+  //     }
+  
+  //     const data = await response.json()
+  
+  
+  
+  
+  //     console.log("DALL-E Response `data`", data);
+  //     console.log("DALL-E Response `data.imageUrl`", data.imageUrl);
+  //     // console.log("DALL-E Response `data.data.imageUrl`", data.data.imageUrl);
+  //     // console.log("DALL-E Response `data.data[0].imageUrl`", data.data[0].imageUrl);
+  //     return(data.imageUrl);
+  //   } catch (error) {
+  //       console.error('Error generating image:', error)
+  //   } finally {
+  //       console.log("Done generating image!")
+  //   }
+  
+  // }
 
 
 
@@ -174,7 +253,10 @@ const ImageGeneratorGUI = () => {
           </div>
           <div className='imageGeneratorGUI_modelDescription' id='modelDescription' data-aos="fade-right" data-aos-delay="300">FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 [pro] and [dev] surpass popular  models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 [schnell] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) .  Our models are specifically finetuned to preserve the entire output diversity from pretraining.</div>
           <a href="https://blackforestlabs.ai/announcing-black-forest-labs/" target='_blank' className='imageGeneratorGUI_modelLink' id='modelLink' data-aos="fade-right" data-aos-delay="300"><u>Learn More -></u></a>
-          <input value="Generate" className="imageGeneratorGUI_submitButton" id="generateButton" type="submit" data-aos="fade-right" data-aos-delay="300" style={{
+          <input value="Generate Text" className="imageGeneratorGUI_submitButton" id="generateTextButton" type="submit" data-aos="fade-right" data-aos-delay="300" style={{
+            fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>
+          <div className='imageGeneratorGUI_modelDescription' id='textOutput' data-aos="fade-right" data-aos-delay="300">...</div>
+          <input value="Generate Image" className="imageGeneratorGUI_submitButton" id="generateImageButton" type="submit" data-aos="fade-right" data-aos-delay="300" style={{
             fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>
           <div id='imageURL'className='imageGeneratorGUITitle' data-aos="fade-right" data-aos-delay="300" style={{
             textDecoration: 'none',
