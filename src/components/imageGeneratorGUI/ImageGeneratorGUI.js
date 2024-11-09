@@ -110,9 +110,13 @@ const ImageGeneratorGUI = () => {
       // console.log("DALL-E Response `data.data.imageUrl`", data.data.imageUrl);
       // console.log("DALL-E Response `data.data[0].imageUrl`", data.data[0].imageUrl);
       generated_text = data;
-      text_output_element.innerHTML = generated_text;
 
-      return(data);
+      console.log('generated_text', generated_text);
+      console.log('generated_text[generated_text]', generated_text['generated_text']);
+
+      text_output_element.innerHTML = generated_text['generated_text'];
+
+      return(generated_text['generated_text']);
       
     } catch (error) {
         console.error('Error generating text:', error)
