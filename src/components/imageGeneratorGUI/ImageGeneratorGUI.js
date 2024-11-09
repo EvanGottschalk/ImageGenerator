@@ -209,7 +209,14 @@ const ImageGeneratorGUI = () => {
     };
   
     console.log('image_generator_response', image_generator_response);
+    console.log('image_generator_response[image_URL]', image_generator_response['image_URL']);
     // const image_URL = image_generator_result[0]['url'];
+
+    if (model === 'DALL-E') {
+      image_generator_result = image_generator_result['image_URL']
+    };
+
+
     image_URL = image_generator_result;
     image_URL_element.innerHTML = "Image URL: " + image_URL;
     image_title_element.innerHTML = "Image: ";
