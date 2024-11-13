@@ -1,5 +1,6 @@
 import React from 'react'
 import image_generator from "./image_generator";
+import text_generator from "./text_generator";
 
 import './imageGeneratorGUI.css'
 
@@ -86,45 +87,105 @@ const ImageGeneratorGUI = () => {
   }
 
   
-  async function handleTextGeneration(prompt, model) {
-    console.log('\nImageGeneratorGUI >>> RUNNING handleTextGeneration()');
-    let text_output_element = document.getElementById('textOutput');
-    try {
-      const response = await fetch('https://alchm-backend.onrender.com/generate-text', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-          },
-        body: JSON.stringify({ prompt })
-      })
+  // async function handleTextGeneration(prompt, model) {
+  //   console.log('\nImageGeneratorGUI >>> RUNNING handleTextGeneration()');
+  //   let text_output_element = document.getElementById('textOutput');
+  //   try {
+  //     const response = await fetch('https://alchm-backend.onrender.com/generate-text', {
+  //       method: 'POST',
+  //       headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       body: JSON.stringify({ prompt })
+  //     })
   
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`Server error: ${response.status}`);
+  //     }
   
-      const data = await response.json()
+  //     const data = await response.json()
   
   
-      console.log("DALL-E Response `data`", data);
-      // console.log("DALL-E Response `data.imageUrl`", data.imageUrl);
-      // console.log("DALL-E Response `data.data.imageUrl`", data.data.imageUrl);
-      // console.log("DALL-E Response `data.data[0].imageUrl`", data.data[0].imageUrl);
-      generated_text = data;
+  //     console.log("DALL-E Response `data`", data);
+  //     // console.log("DALL-E Response `data.imageUrl`", data.imageUrl);
+  //     // console.log("DALL-E Response `data.data.imageUrl`", data.data.imageUrl);
+  //     // console.log("DALL-E Response `data.data[0].imageUrl`", data.data[0].imageUrl);
+  //     generated_text = data;
 
-      console.log('generated_text', generated_text);
-      console.log('generated_text[generated_text]', generated_text['generated_text']);
+  //     console.log('generated_text', generated_text);
+  //     console.log('generated_text[generated_text]', generated_text['generated_text']);
 
-      text_output_element.innerHTML = generated_text['generated_text'];
+  //     text_output_element.innerHTML = generated_text['generated_text'];
 
-      return(generated_text['generated_text']);
+  //     return(generated_text['generated_text']);
       
-    } catch (error) {
-        console.error('Error generating text:', error)
-    } finally {
-        console.log("Done generating text!")
-    }
+  //   } catch (error) {
+  //       console.error('Error generating text:', error)
+  //   } finally {
+  //       console.log("Done generating text!")
+  //   }
 
     
+  // };
+
+  async function handleTextGeneration(prompt, model) {
+    console.log('\nImageGeneratorGUI >>> RUNNING handleTextGeneration()');
+    
+    let text_output_element = document.getElementById('textOutput');
+    // let text_title_element = document.getElementById('textTitle');
+  
+    text_output_element.innerHTML = "Generating";
+    // text_title_element.innerHTML = "Generated Text: Generating";
+  
+    let text_generator_response, text_generator_promise, text_generator_result;
+    text_generator_response = text_generator.generateText(prompt, "gpt-3.5-turbo", "OpenAI");
+    
+  
+    var loop_count = 1;
+    var loop = true;
+    console.log('len', text_generator_response.length);
+    console.log(text_generator_response);
+    while ( loop ) {
+      await pause(500);
+      if (loop_count > 3) {
+        text_output_element.innerHTML = "Generating";
+        loop_count = 0;
+      } else {
+        text_output_element.insertAdjacentText('beforeEnd', '.');
+      }
+      loop_count+=1;
+      console.log("Loop Count: ", loop_count);
+      console.log('len', text_generator_response.length);
+      console.log(text_generator_response);
+      text_generator_promise = text_generator_response.then((result) => {
+        console.log(result);
+        // if (Array.isArray(result)) {
+        //   loop = false;
+        //   text_generator_result = result;
+        // };
+        if (typeof result === 'string') {
+          loop = false;
+          text_generator_result = result;
+        };
+      });
+      console.log('promise', text_generator_promise);
+    };
+
+    console.log('text_generator_response', text_generator_response);
+    console.log('text_generator_response[generated_text]', text_generator_response['generated_text']);
+    // const text_URL = text_generator_result[0]['url'];
+
+    if (model === 'DALL-E') {
+      text_generator_result = text_generator_result['generated_text']
+    };
+
+
+    generated_text = text_generator_result;
+    text_output_element.innerHTML = generated_text;
+    // text_title_element.innerHTML = "text: ";
+  
+    return(generated_text);
+
   };
 
 
@@ -266,6 +327,9 @@ const ImageGeneratorGUI = () => {
           <a href="https://blackforestlabs.ai/announcing-black-forest-labs/" target='_blank' className='imageGeneratorGUI_modelLink' id='modelLink' data-aos="fade-right" data-aos-delay="300"><u>Learn More -></u></a>
           <input value="Generate Text" className="imageGeneratorGUI_submitButton" id="generateTextButton" type="submit" data-aos="fade-right" data-aos-delay="300" style={{
             fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>
+          <div id='textTitle' className='imageGeneratorGUITitle' data-aos="fade-right" data-aos-delay="300" style={{
+            textDecoration: 'none',
+            color: '#bbbbbb'}}>Generated Text:</div>
           <div className='imageGeneratorGUI_modelDescription' id='textOutput' data-aos="fade-right" data-aos-delay="300">...</div>
           <input value="Generate Image" className="imageGeneratorGUI_submitButton" id="generateImageButton" type="submit" data-aos="fade-right" data-aos-delay="300" style={{
             fontSize:18, marginRight:20}} onClick={handleGenerateClick}/>

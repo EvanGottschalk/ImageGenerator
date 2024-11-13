@@ -33,7 +33,7 @@ export default { generateText }
 
 
 export async function generateText(prompt, model, provider="OpenAI") {
-  let image_URL;
+  let text_output;
   if (provider === "OpenAI") {
     text_output = generateText_OpenAI(prompt, model);
   }
